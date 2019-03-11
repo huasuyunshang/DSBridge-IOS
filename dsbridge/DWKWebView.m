@@ -378,20 +378,20 @@ initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL))completi
            completionHandler:nil];
 }
 
-- (void) addJavascriptObject:(id)object namespace:(NSString *)namespace{
-    if(namespace==nil){
-        namespace=@"";
+- (void) addJavascriptObject:(id)object namespace:(NSString *)pnamespace{
+    if(pnamespace==nil){
+        pnamespace=@"";
     }
     if(object!=NULL){
-        [javaScriptNamespaceInterfaces setObject:object forKey:namespace];
+        [javaScriptNamespaceInterfaces setObject:object forKey:pnamespace];
     }
 }
 
-- (void) removeJavascriptObject:(NSString *)namespace {
-    if(namespace==nil){
-        namespace=@"";
+- (void) removeJavascriptObject:(NSString *)pnamespace {
+    if(pnamespace==nil){
+        pnamespace=@"";
     }
-    [javaScriptNamespaceInterfaces removeObjectForKey:namespace];
+    [javaScriptNamespaceInterfaces removeObjectForKey:pnamespace];
 }
 
 - (void)customJavascriptDialogLabelTitles:(NSDictionary *)dic{
